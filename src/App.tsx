@@ -1,6 +1,6 @@
+
 import { useState, type FormEvent } from 'react'
 import logo from './assets/logo.png'
-
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
@@ -90,7 +90,10 @@ const SURVEY_SECTIONS = [
   },
 ]
 
-const TOTAL_QUESTIONS = SURVEY_SECTIONS.reduce((total, section) => total + section.questions.length, 0)
+const TOTAL_QUESTIONS = SURVEY_SECTIONS.reduce(
+  (total, section) => total + section.questions.length,
+  0,
+)
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -120,6 +123,7 @@ export default function App() {
           <a href="#inicio">
             <img src={logo} alt="Cakeval" className="h-14 w-auto" />
           </a>
+
           <nav className="hidden md:flex gap-6">
             {NAV_LINKS.map(l => (
               <a
@@ -131,16 +135,19 @@ export default function App() {
               </a>
             ))}
           </nav>
+
           <a
             href="#contacto"
             className="hidden md:inline-flex items-center gap-2 bg-[#6B5CE7] hover:bg-[#4F3FD3] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200"
           >
             Empecemos
           </a>
+
           <button
             className="md:hidden p-2 text-[#6B5CE7]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menú"
+            type="button"
           >
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
               {menuOpen ? (
@@ -155,6 +162,7 @@ export default function App() {
             </svg>
           </button>
         </div>
+
         {menuOpen && (
           <div className="md:hidden bg-white border-t border-[#EEEAFF] px-6 py-4 flex flex-col gap-4">
             {NAV_LINKS.map(l => (
@@ -176,14 +184,19 @@ export default function App() {
         id="inicio"
         className="relative pt-24 min-h-screen flex items-center overflow-hidden bg-white"
       >
-        {/* decorative blobs */}
         <div
           className="absolute top-0 right-0 w-[600px] h-[600px] opacity-10 rounded-full"
-          style={{ background: 'radial-gradient(circle, #89CFF0 0%, transparent 70%)', transform: 'translate(30%, -20%)' }}
+          style={{
+            background: 'radial-gradient(circle, #89CFF0 0%, transparent 70%)',
+            transform: 'translate(30%, -20%)',
+          }}
         />
         <div
           className="absolute bottom-0 left-0 w-[400px] h-[400px] opacity-10 rounded-full"
-          style={{ background: 'radial-gradient(circle, #6B5CE7 0%, transparent 70%)', transform: 'translate(-20%, 30%)' }}
+          style={{
+            background: 'radial-gradient(circle, #6B5CE7 0%, transparent 70%)',
+            transform: 'translate(-20%, 30%)',
+          }}
         />
 
         <div className="relative max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center">
@@ -191,6 +204,7 @@ export default function App() {
             <span className="inline-block bg-[#6B5CE7]/10 text-[#6B5CE7] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-[#6B5CE7]/20">
               Tabio, Cundinamarca
             </span>
+
             <h1 className="text-5xl md:text-6xl font-extrabold text-[#1A1535] leading-[1.1] mb-6">
               La clave que{' '}
               <span
@@ -204,9 +218,11 @@ export default function App() {
               </span>{' '}
               tu marca
             </h1>
+
             <p className="text-[#4A4570] text-lg leading-relaxed mb-10 max-w-md">
               Publicidad creativa, accesible y efectiva para los pequeños emprendimientos de Tabio. Tu visibilidad es nuestra misión.
             </p>
+
             <div className="flex flex-wrap gap-4">
               <a
                 href="#mision"
@@ -222,11 +238,16 @@ export default function App() {
               </a>
             </div>
           </div>
+
           <div className="flex justify-center">
             <div className="relative">
               <div
                 className="absolute inset-0 rounded-3xl opacity-40"
-                style={{ background: 'linear-gradient(135deg, #6B5CE7, #89CFF0)', filter: 'blur(40px)', transform: 'scale(1.1)' }}
+                style={{
+                  background: 'linear-gradient(135deg, #6B5CE7, #89CFF0)',
+                  filter: 'blur(40px)',
+                  transform: 'scale(1.1)',
+                }}
               />
               <div className="relative bg-white rounded-3xl p-10 border border-[#EEEAFF] shadow-xl">
                 <img src={logo} alt="Cakeval logo" className="w-64 h-auto" />
@@ -249,7 +270,10 @@ export default function App() {
             <span className="inline-block bg-[#89CFF0]/15 text-[#6B5CE7] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 border border-[#89CFF0]/40">
               Conoce Cakeval
             </span>
-            <h2 id="video-title" className="text-4xl md:text-5xl font-extrabold text-[#1A1535] leading-tight">
+            <h2
+              id="video-title"
+              className="text-4xl md:text-5xl font-extrabold text-[#1A1535] leading-tight"
+            >
               Creatividad que impulsa ideas
             </h2>
           </div>
@@ -257,20 +281,21 @@ export default function App() {
           <div className="relative">
             <div
               className="absolute -inset-3 md:-inset-5 rounded-3xl opacity-20"
-              style={{ background: 'linear-gradient(135deg, #6B5CE7, #89CFF0)', filter: 'blur(24px)' }}
+              style={{
+                background: 'linear-gradient(135deg, #6B5CE7, #89CFF0)',
+                filter: 'blur(24px)',
+              }}
               aria-hidden="true"
             />
             <div className="relative rounded-3xl overflow-hidden border border-[#EEEAFF] bg-white p-2 md:p-3 shadow-xl">
-              <video
-                className="w-full max-h-[75vh] rounded-2xl bg-[#1A1535] object-contain"
-                controls
-                playsInline
-                preload="metadata"
-                aria-label="Video de presentación de Cakeval"
-              >
-                <source src={presentationVideo} type="video/mp4" />
-                Tu navegador no puede reproducir este video.
-              </video>
+              <iframe
+                className="w-full aspect-video rounded-2xl bg-[#1A1535]"
+                src="https://www.youtube.com/embed/2TUGBC4S7pA"
+                title="Video de presentación de Cakeval"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
@@ -305,6 +330,7 @@ export default function App() {
               </div>
               <span className="text-[#6B5CE7] font-semibold text-sm tracking-widest uppercase">Nuestra Misión</span>
             </div>
+
             <h2 className="text-4xl font-extrabold text-[#1A1535] leading-tight mb-6">
               Apoyamos el crecimiento de tu negocio
             </h2>
@@ -319,10 +345,7 @@ export default function App() {
       </section>
 
       {/* VISION */}
-      <section
-        id="vision"
-        className="py-24 bg-white"
-      >
+      <section id="vision" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 mb-5">
@@ -334,6 +357,7 @@ export default function App() {
               </div>
               <span className="text-[#6B5CE7] font-semibold text-sm tracking-widest uppercase">Nuestra Visión</span>
             </div>
+
             <h2 className="text-4xl font-extrabold text-[#1A1535] leading-tight mb-6">
               Líderes en publicidad municipal para el 2029
             </h2>
@@ -416,10 +440,7 @@ export default function App() {
       </section>
 
       {/* SPECIFIC OBJECTIVES */}
-      <section
-        id="objetivos"
-        className="py-24 bg-white"
-      >
+      <section id="objetivos" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#6B5CE7] font-semibold text-sm tracking-widest uppercase">Lo que hacemos</span>
@@ -450,7 +471,6 @@ export default function App() {
               </div>
             ))}
 
-            {/* filler card */}
             <div
               className="hidden lg:flex bg-[#6B5CE7] rounded-2xl p-7 items-end"
               style={{ background: 'linear-gradient(135deg, #6B5CE7, #89CFF0)' }}
@@ -615,10 +635,7 @@ export default function App() {
       </section>
 
       {/* CONTACT / CTA */}
-      <section
-        id="contacto"
-        className="py-24 bg-white"
-      >
+      <section id="contacto" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <span className="inline-block bg-[#6B5CE7]/10 text-[#6B5CE7] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-[#6B5CE7]/20">
             Contáctanos
