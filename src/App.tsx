@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import logo from './assets/logo.png'
-import presentationVideo from './assets/cakeval-presentacion.mp4'
+
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
