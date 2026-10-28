@@ -1,0 +1,10 @@
+{
+  "description": "Empowering small businesses in Tabio with creative advertising solutions, this platform enhances online visibility and fosters community growth.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
