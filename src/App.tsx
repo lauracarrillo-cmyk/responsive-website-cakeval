@@ -290,7 +290,7 @@ export default function App() {
             <div className="relative rounded-3xl overflow-hidden border border-[#EEEAFF] bg-white p-2 md:p-3 shadow-xl">
               <iframe
                 className="w-full aspect-video rounded-2xl bg-[#1A1535]"
-                src="https://youtu.be/E8zlLaIqHCM"
+                src="https://www.youtube.com/embed/E8zlLaIqHCM"
                 title="Video de presentación de Cakeval"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
